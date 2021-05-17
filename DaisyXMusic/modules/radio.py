@@ -35,7 +35,8 @@ FFMPEG_PROCESSES = {}
 @authorized_users_only
 async def start(client, message: Message):
     input_filename = f'radio-{message.chat.id}.raw'
-    if chat_id in callsmusic.pytgcalls.active_calls:
+    chat_id = message.chat.id
+    if message.chat.id in callsmusic.pytgcalls.active_calls:
          await message.reply("Try again after ending music play")
          return         
     if not message.reply_to_message or len(message.command) < 2:
@@ -64,7 +65,7 @@ async def start(client, message: Message):
         return
 
     try:
-        callsmusic.pytgcalls.join_group_call(chat_id, file_path)
+        callsmusic.pytgcalls.join_group_call(chat_id, input_filename)
     except:
         res.edit("Group call is not connected of I can't join it")
         return
