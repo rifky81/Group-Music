@@ -14,7 +14,7 @@ except:
      import ffmpeg
 from pyrogram import Client, filters
 from pyrogram.types import Message
-from DaisyXMusic.modules.play import get_text
+from DaisyXMusic.modules.song import get_text
 from DaisyXMusic.services.callsmusic import callsmusic  # pip install pytgcalls
 from DaisyXMusic.helpers.decorators import authorized_users_only
 
