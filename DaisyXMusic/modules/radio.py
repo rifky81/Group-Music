@@ -46,20 +46,25 @@ def get_text(message: Message) -> [None, str]:
 @Client.on_message(filters.command('broadcast'))
 @authorized_users_only
 async def start(client, message: Message):
-    await message.reply("Processing")
+    res = await message.reply("Processing")
     input_filename = f'radio-{message.chat.id}.raw'
     chat_id = message.chat.id
     if message.chat.id in callsmusic.pytgcalls.active_calls:
          await message.reply("Try again after ending music play")
          return         
 
+    if not message.reply_to_message or len(message.command) < 2:
+        await message.reply_text(
+            'Replay Command To List of Stations or Pass a Station ID'
+        )
+        return
     process = FFMPEG_PROCESSES.get(message.chat.id)
     if process:
         process.send_signal(signal.SIGTERM)
 
     station_stream_url = None
-    query = get_text(message)
-    station_id = query
+
+    station_id = message.command[1]
     msg_lines = message.reply_to_message.text.split('\n')
     for line in msg_lines:
         line_prefix = f'{station_id}. '
