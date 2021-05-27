@@ -1,4 +1,4 @@
-# DAISYXMUSIC- Telegram bot project
+# GROUP-MUSIC - Telegram bot project
 # Copyright (C) 2021  Roj Serbest
 # Copyright (C) 2021  Inuka Asith
 # This program is free software: you can redistribute it and/or modify
@@ -27,16 +27,16 @@ que = {}
 SESSION_NAME = getenv("SESSION_NAME", "session")
 BOT_TOKEN = getenv("BOT_TOKEN")
 BOT_NAME = getenv("BOT_NAME")
-UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "DaisyXupdates")
-BG_IMAGE = getenv("BG_IMAGE", "https://telegra.ph/file/dcfdf612e499eef0e0b1f.png")
+UPDATES_CHANNEL = getenv("UPDATES_CHANNEL", "twitter_viralllll")
+BG_IMAGE = getenv("BG_IMAGE", "https://telegra.ph/file/3c7889bafcc86adafc697.jpg")
 admins = {}
 API_ID = int(getenv("API_ID"))
 API_HASH = getenv("API_HASH")
 BOT_USERNAME = getenv("BOT_USERNAME")
-ASSISTANT_NAME = getenv("ASSISTANT_NAME", "DaisyXhelper")
-SUPPORT_GROUP = getenv("SUPPORT_GROUP", "DaisySupport_Official")
-PROJECT_NAME = getenv("PROJECT_NAME", "DaisyXMusic v4")
-SOURCE_CODE = getenv("SOURCE_CODE", "github.com/teamdaisyx/daisyxmusic")
+ASSISTANT_NAME = getenv("ASSISTANT_NAME", "rifkyyyyyyyyyyyyyyyy")
+SUPPORT_GROUP = getenv("SUPPORT_GROUP", "viraltwittergrup")
+PROJECT_NAME = getenv("PROJECT_NAME", "Rifky Music")
+SOURCE_CODE = getenv("SOURCE_CODE", "github.com/rifky81/Group-Music")
 DURATION_LIMIT = int(getenv("DURATION_LIMIT", "7"))
 ARQ_API_KEY = getenv("ARQ_API_KEY", "VKSSQH-SRNJYZ-MSOJAI-QALESR-ARQ")
 COMMAND_PREFIXES = list(getenv("COMMAND_PREFIXES", "/ !").split())
