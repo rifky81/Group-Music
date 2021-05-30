@@ -1,109 +1,95 @@
-<h1 align="centre">DAISYXMUSIC V4.0 🎵</h1>
+<h1 align="centre">RifkyMusic V4.0 🎵</h1>
 
-### A bot that can play music on Telegram Group and Channel Voice Chats
+### Bot yang dapat memutar musik di Grup Telegram dan Obrolan Suara Saluran
 #### POWERED BY [PYTGCALLS](https://github.com/pytgcalls/pytgcalls)
-### Available on telegram as [@DaisyXbot](https://t.me/daisyxbot)
+### Modifided by [@DarkKnight](https://t.me/PacarFerdilla)
+### Cash by [@Rifky](https://t.me/rifkyyyyyyyyyyyyyyyy)
 
 <p align="center">
-  <img src="https://telegra.ph/file/dd04b1968f1bc1169d162.jpg">
+  <img src="https://telegra.ph/file/3c7889bafcc86adafc697.jpg">
 </p>
 
-<h2> Features 🔥 </h2>
+<h2> Fitur 🔥 </h2>
 
-- Thumbnail Support
-- Playlist Support
-- Current playback support
-- Showing track names when skipping
-- Zero downtime, Fully Stable
-- DEEZER,YOUTUBE & SAAVN PLAYBACK SUPPORTED
-- Settings panel
-- Control with buttons
-- Userbot auto join
-- Channel Music Play
+- Dukungan Gambar Kecil
+- Dukungan Daftar Putar
+- Dukungan pemutaran saat ini
+- Menampilkan nama trek saat melompati
+- Tanpa downtime, Stabil Sepenuhnya
+- PEMUTARAN DEEZER, YOUTUBE & SAAVN DIDUKUNG
+- Panel pengaturan
+- Kontrol dengan tombol
+- Gabung otomatis Userbot
+- Saluran Putar Musik
 
-## 🚀 Deployment
+## 🚀 Deploy ke heroku
 
 ### 💜 Heroku
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/teamdaisyx/DaisyXMusic)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/rifky81/Group-Music)
 
-Use [@DaisyXStringGeneratorBot](https://t.me/DaisyXStringGeneratorBot) to get pyrogram string session or [repl](https://repl.it/@SpEcHiDe/GenerateStringSession)
+### String Session
+ 
+String Project Kami 
 
-### ⚔ Self-hosting (For Devs) 
+•  Gabung Grup [@KingUserbotSupport](https://t.me/KingUserbotSupport) lalu ketik #string , kalau tidak langsung saja ke [repl](https://repl.it/@apisuserbot/String-Session?v=1)
+
+### ⚔ Hosting sendiri (For Devs) 
 ```sh
 # Install Git First (apt-instll git)
-$ git clone https://github.com/TeamDaisyX/DaisyXmusic
-$ cd DaisyXMusic
+$ git clone https://github.com/rifky81/Group-Music
+$ cd GroupMusic
 # Upgrade sources
 # Install All Requirements 
 $ pip(3) install -r requirements.txt
 # Rename example.env to local.env and fill
 $ npm i -g npm
 # Start Bot 
-$ python(3) -m DaisyXMusic
+$ python(3) -m GroupMusic
 ```
 
-### Commands for Group 🛠
-#### For all in group
+### Perintah  🛠
+#### Perintah untuk semua grup
 
-- `/play <song name>` - play song you requested
-- `/play <reply to audio>` - play replied file
-- `/dplay <song name>` - play song you requested via deezer
-- `/splay <song name>` - play song you requested via jio saavn
-- `/playlist` - Show now playing list
-- `/current` - Show now playing
-- `/song <song name>` - download songs you want quickly
-- `/search <query>` - search videos on youtube with details
-- `/deezer <song name>` - download songs you want quickly via deezer
-- `/saavn <song name>` - download songs you want quickly via saavn
-- `/video <song name>` - download videos you want quickly
+- `/play <song name>` - putar lagu yang Anda minta
+- `/putar <balas audio>` - putar file yang dijawab
+- `/dplay <song name>` - putar lagu yang Anda minta melalui deezer
+- `/splay <song name>` - putar lagu yang Anda minta melalui jio saavn
+- `/playlist` - Tampilkan daftar putar sekarang
+- `/current` - Tunjukkan pemutaran sekarang
+- `/lagu <nama lagu>` - unduh lagu yang Anda inginkan dengan cepat
+- `/search <query>` - mencari video di youtube dengan detail
+- `/deezer <song name>` - unduh lagu yang Anda inginkan dengan cepat melalui deezer
+- `/saavn <song name>` - unduh lagu yang Anda inginkan dengan cepat melalui saavn
+- `/video <nama lagu>` - unduh video yang Anda inginkan dengan cepat
 
-#### Admins only.
-- `/player` - open music player settings panel
-- `/pause` - pause song play
-- `/resume` - resume song play
-- `/skip` - play next song
-- `/end` - stop music play
-- `/userbotjoin` - invite assistant to your chat
-- `/userbotleave` - remove assistant from your chat
-- `/admincache` - Refresh admin list
+#### Khusus Admin.
+- `/player` - buka panel pengaturan pemutar musik
+- `/pause` - jeda pemutaran lagu
+- `/resume` - melanjutkan pemutaran lagu
+- `/lewati` - putar lagu berikutnya
+- `/end` - hentikan pemutaran musik
+- `/userbotjoin` - undang asisten ke obrolan Anda
+- `/userbotleave` - hapus asisten dari obrolan Anda
+- `/admincache` - Segarkan daftar admin
 
-### Commands for Channel Music Play 🛠
-For linked group admins only:
-- `/cplay <song name>` - play song you requested
-- `/cplay <reply to audio>` - play replied file
-- `/cdplay <song name>` - play song you requested via deezer
-- `/csplay <song name>` - play song you requested via jio saavn
-- `/cplaylist` - Show now playing list
-- `/cccurrent` - Show now playing
-- `/cplayer` - open music player settings panel
-- `/cpause` - pause song play
-- `/cresume` - resume song play
-- `/cskip` - play next song
-- `/cend` - stop music play
-- `/userbotjoinchannel` - invite assistant to your chat
-* channel is also can be used instead of c
-
-If you donlt like to play in linked channel:
- 1. Get your channel ID.
- 2. Rename your group to: Channel Music: your_channel_id
- 3. Add @DaisyXBot as Channel admin with full perms
- 4. add helper to channel
- 5. Simply send commands in your group.
+Jika Anda tidak suka bermain di saluran (Channel) yang ditautkan:
+ 1. Dapatkan ID saluran (Channel) Anda.
+ 2. Ubah nama grup Anda menjadi: Channel Music: your_channel_id
+ 3. Tambahkan Bot Anda sebagai admin Saluran (Channel) dengan izin penuh
+ 4. menambahkan pembantu ke saluran (Channel)
+ 5. Cukup kirimkan perintah dalam grup Anda.
 
 
 
 
-### Credits
-Don't edit this part
+### Kredit
+Tidak ada
 
-#### Special Credits
+#### Special kredit
 - [Rojserbest](http://github.com/rojserbes): Callsmusic Developer
 
-This bot is based on the original work done by [Rojserbest](http://github.com/rojserbest). Without his hardwork daisyxmusic won't exist. 
-DaisyXmusic is a modified version of [Callsmusic](https://github.com/callsmusic/callsmusic) for fit the needs of @DaisyXbot users
-
-#### Contribtors
+#### Kredit
 - [InukaASiTH](https://github.com/InukaAsith): Dev
 - [Rojserbest](http://github.com/rojserbes): Dev
 - [Wrench](https://github.com/EverythingSuckz/): Dev
@@ -115,3 +101,7 @@ DaisyXmusic is a modified version of [Callsmusic](https://github.com/callsmusic/
 - [ImJanindu](https://github.com/ImJanindu): 
 - [Laky](https://github.com/Laky-64) & [Andrew](https://github.com/AndrewLaneX): PyTgCalls
 - [Original Repo owners](https://github.com/suprojects/CallsMusic)
+
+### Repo Userbot All
+•  [King-Userbot](https://github.com/apisuserbot/King-Userbot) Dev Apis
+•  [Lord-Userbot](https://github.com/Zora24/Lord-Userbot) Dev Alvin
