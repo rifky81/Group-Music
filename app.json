@@ -1,66 +1,66 @@
 {
-  "name": "DaisyXMusic",
-  "description": "Open-Source bot to play songs in your Telegram's Group Voice Chat. Powered by PyTgCalls.",
+  "name": "GroupMusic",
+  "description": "BOT MODULAR (VCG) OBROLAN SUARA TELEGRAM.",
   "keywords": ["music", "voicechat", "telegram"],
-  "repository": "https://github.com/TeamDaisyX/DaisyXMusic",
+  "repository": "https://github.com/rifky81/Group-Music",
   "stack": "container",
   "env": {
     "SESSION_NAME": {
-      "description": "Pyrogram session string",
+      "description": "Pyrogram session string , Caranya gabung @KingUserbotSupport lalu ketik #string",
       "required": true
     },
     "BOT_TOKEN": {
-      "description": "A bot token from @BotFather",
+      "description": "Token bot dari @BotFather",
       "required": true
     },
     "BOT_USERNAME": {
-      "description": "Your bot's username without @",
+      "description": "Username bot Anda tanpa @",
       "required": true
     },
     "BOT_NAME": {
-      "description": "Your MusicPlayer Bot Name.",
+      "description": "Nam bot music Anda.",
       "required": false,
       "value": ""
     },
     "SUPPORT_GROUP": {
-      "description": "Your MusicPlayer support group without @ [Leave this if you don't have one]",
+      "description": "Grup dukungan MusicPlayer Anda tanpa @ [Tinggalkan ini jika Anda tidak memilikinya]",
       "required": false,
-      "value": "DaisySupport_Official"
+      "value": "viraltwittergrup"
     },
     "PROJECT_NAME": {
-      "description": "Your MusicPlayer project Name.",
+      "description": "Nama proyek MusicPlayer Anda.",
       "required": false,
-      "value": "DaisyXMusic v4"
+      "value": "RifkyMusic"
     },
     "ASSISTANT_NAME": {
-      "description": "Your MusicPlayer's assistant Username without @.",
+      "description": "Nama pengguna asisten MusicPlayer Anda tanpa @.",
       "required": true
     },
     "ARQ_API_KEY": {
-      "description": "Get from @ARQRobot.",
+      "description": "Dapat dari @ARQRobot.",
       "required": false,
       "value": "VKSSQH-SRNJYZ-MSOJAI-QALESR-ARQ"
     },    
     "BG_IMAGE": {
-      "description": "BG image of bot (Use transparent one) [IGNORE].",
+      "description": "Gambar BG bot (Gunakan yang transparan) [IGNORE] Menggunakan Telegraph.",
       "required": false,
-      "value": " https://telegra.ph/file/dcfdf612e499eef0e0b1f.png"
+      "value": " https://telegra.ph/file/3c7889bafcc86adafc697.jpg"
     },     
     "UPDATES_CHANNEL": {
-      "description": "Updates Channel without @ [Leave this if you don't have one].",
+      "description": "update Saluran (channel) tanpa @ [Tinggalkan ini jika Anda tidak memilikinya].",
       "required": false,
-      "value": "DaisyXupdates"
+      "value": "twitter_viralllll"
     },    
     "API_ID": {
-      "description": "App ID from my.telegram.org/apps",
+      "description": "API_ID dari my.telegram.org/apps",
       "required": true
     },
     "API_HASH": {
-      "description": "App hash from my.telegram.org/apps",
+      "description": "API_HASH dari my.telegram.org/apps",
       "required": true
     },
     "SUDO_USERS": {
-      "description": "List of user IDs counted as admin everywhere (separated by space).",
+      "description": "Daftar ID pengguna dihitung sebagai admin di semua tempat (pakai spasi).",
       "required": true
     },
     "DURATION_LIMIT": {
