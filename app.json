@@ -20,7 +20,7 @@
     "BOT_NAME": {
       "description": "Nama bot music Anda.",
       "required": false,
-      "value": ""
+      "value": "Isi nama bot lu"
     },
     "SUPPORT_GROUP": {
       "description": "Grup dukungan MusicPlayer Anda tanpa @ [Tinggalkan ini jika Anda tidak memilikinya]",
