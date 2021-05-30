@@ -1,4 +1,3 @@
-
 # GroupMusic (Telegram bot project )
 # Copyright (C) 2021  Apis
 
