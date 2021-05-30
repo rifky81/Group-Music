@@ -57,7 +57,7 @@ $ python(3) -m GroupMusic
 - `/splay <song name>` - putar lagu yang Anda minta melalui jio saavn
 - `/playlist` - Tampilkan daftar putar sekarang
 - `/current` - Tunjukkan pemutaran sekarang
-- `/lagu <nama lagu>` - unduh lagu yang Anda inginkan dengan cepat
+- `/song <nama lagu>` - unduh lagu yang Anda inginkan dengan cepat
 - `/search <query>` - mencari video di youtube dengan detail
 - `/deezer <song name>` - unduh lagu yang Anda inginkan dengan cepat melalui deezer
 - `/saavn <song name>` - unduh lagu yang Anda inginkan dengan cepat melalui saavn
@@ -67,7 +67,7 @@ $ python(3) -m GroupMusic
 - `/player` - buka panel pengaturan pemutar musik
 - `/pause` - jeda pemutaran lagu
 - `/resume` - melanjutkan pemutaran lagu
-- `/lewati` - putar lagu berikutnya
+- `/skip` - putar lagu berikutnya
 - `/end` - hentikan pemutaran musik
 - `/userbotjoin` - undang asisten ke obrolan Anda
 - `/userbotleave` - hapus asisten dari obrolan Anda
