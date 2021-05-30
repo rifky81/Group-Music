@@ -123,7 +123,7 @@ async def generate_cover(requested_by, title, views, duration, thumbnail):
     draw.text((205, 630), f"Dilihat: {views}", (255, 255, 255), font=font)
     draw.text(
         (205, 670),
-        f"Added By: {requested_by}",
+        f"Diminta oleh: {requested_by}",
         (255, 255, 255),
         font=font,
     )
@@ -238,7 +238,7 @@ async def p_cb(b, cb):
     if type_ == "playlist":
         queue = que.get(cb.message.chat.id)
         if not queue:
-            await cb.message.edit("Player is idle")
+            await cb.message.edit("Pemain tidak ada")
         temp = []
         for t in queue:
             temp.append(t)
@@ -381,7 +381,7 @@ async def m_cb(b, cb):
                 callsmusic.pytgcalls.change_stream(
                     chet_id, callsmusic.queues.get(chet_id)["file"]
                 )
-                await cb.answer("Skipped")
+                await cb.answer("Di lewati")
                 await cb.message.edit((m_chat, qeue), reply_markup=r_ply(the_data))
                 await cb.message.reply_text(
                     f"- Trek yang dilewati\n- Sedang dimainkan **{qeue[0][0]}**"
@@ -403,7 +403,7 @@ async def m_cb(b, cb):
 @Client.on_message(command("play") & other_filters)
 async def play(_, message: Message):
     global que
-    lel = await message.reply("🔄 **Memproses**")
+    lel = await message.reply("🔄 **Sedang Memproses**")
     administrators = await get_administrators(message.chat)
     chid = message.chat.id
 
@@ -459,7 +459,7 @@ async def play(_, message: Message):
         return
     message.from_user.id
     message.from_user.first_name
-    await lel.edit("🔎 **Temuan**")
+    await lel.edit("🔎 **Menemukan Lagu**")
     message.from_user.id
     if message.reply_to_message:
         entities = []
@@ -488,7 +488,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"❌ Video lebih lama dari {DURATION_LIMIT} menit(s) tidak diizinkan untuk bermain!"
+                f"❌ Video lebih lama dari {DURATION_LIMIT} tidak diizinkan untuk bermain!"
             )
         keyboard = InlineKeyboardMarkup(
             [
@@ -520,14 +520,14 @@ async def play(_, message: Message):
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
             # print(results)
-            Judul = results[0]["title"][:40]
+            title = results[0]["title"][:40]
             thumbnail = results[0]["thumbnails"][0]
             thumb_name = f"thumb{title}.jpg"
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, "wb").write(thumb.content)
-            Durasi = results[0]["duration"]
+            duration = results[0]["duration"]
             results[0]["url_suffix"]
-            Dilihat = results[0]["views"]
+            views = results[0]["views"]
 
         except Exception as e:
             await lel.edit(
@@ -544,7 +544,7 @@ async def play(_, message: Message):
                     InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
                 ],
                 [
-                    InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
+                    InlineKeyboardButton(text="🎬 Video YouTube", url=f"{url}"),
                     InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
                 ],
                 [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
@@ -564,14 +564,14 @@ async def play(_, message: Message):
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
             # print(results)
-            Judul = results[0]["title"][:40]
+            title = results[0]["title"][:40]
             thumbnail = results[0]["thumbnails"][0]
             thumb_name = f"thumb{title}.jpg"
             thumb = requests.get(thumbnail, allow_redirects=True)
             open(thumb_name, "wb").write(thumb.content)
-            Durasi = results[0]["duration"]
+            duration = results[0]["duration"]
             results[0]["url_suffix"]
-            Dilihat = results[0]["views"]
+            views = results[0]["views"]
 
         except Exception as e:
             await lel.edit(
@@ -588,7 +588,7 @@ async def play(_, message: Message):
                     InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
                 ],
                 [
-                    InlineKeyboardButton(text="🎬 YouTube", url=f"{url}"),
+                    InlineKeyboardButton(text="🎬 Video YouTube", url=f"{url}"),
                     InlineKeyboardButton(text="Download 📥", url=f"{dlurl}"),
                 ],
                 [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
@@ -641,7 +641,7 @@ async def play(_, message: Message):
 @Client.on_message(filters.command("dplay") & filters.group & ~filters.edited)
 async def deezer(client: Client, message_: Message):
     global que
-    lel = await message_.reply("🔄 **Memproses**")
+    lel = await message_.reply("🔄 **Sedang Memproses**")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
@@ -700,7 +700,7 @@ async def deezer(client: Client, message_: Message):
     queryy = text[1]
     query = queryy
     res = lel
-    await res.edit(f"Mencari untuk  `{queryy}` on deezer")
+    await res.edit(f"Mencari untuk `{queryy}` on deezer")
     try:
         songs = await arq.deezer(query,1)
         if not songs.ok:
@@ -713,7 +713,7 @@ async def deezer(client: Client, message_: Message):
         thumbnail = "https://telegra.ph/file/3c7889bafcc86adafc697.jpg"
 
     except:
-        await res.edit("Found Literally Nothing, You Should Work On Your English!")
+        await res.edit("Tidak Ditemukan Secara Harafiah, Anda Harus Mengerjakan Bahasa Inggris Anda!")
         return
     keyboard = InlineKeyboardMarkup(
         [
@@ -721,7 +721,7 @@ async def deezer(client: Client, message_: Message):
                 InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
                 InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
             ],
-            [InlineKeyboardButton(text="Listen On Deezer 🎬", url=f"{url}")],
+            [InlineKeyboardButton(text="Mendengarkan Deezer 🎬", url=f"{url}")],
             [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
         ]
     )
@@ -738,9 +738,9 @@ async def deezer(client: Client, message_: Message):
         loc = file_path
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
-        await res.edit_text(f"✯{bn}✯= #️⃣ Queued at position {position}")
+        await res.edit_text(f"✯{bn}✯= #️⃣ Antri di posisi {position}")
     else:
-        await res.edit_text(f"✯{bn}✯=▶️ Playing.....")
+        await res.edit_text(f"✯{bn}✯=▶️ Memainkan.....")
 
         que[chat_id] = []
         qeue = que.get(chat_id)
@@ -752,7 +752,7 @@ async def deezer(client: Client, message_: Message):
         try:
             callsmusic.pytgcalls.join_group_call(chat_id, file_path)
         except:
-            res.edit("Group call is not connected of I can't join it")
+            res.edit("Panggilan grup tidak terhubung ke tidak bisa bergabung")
             return
 
     await res.delete()
@@ -761,7 +761,7 @@ async def deezer(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"Playing [{title}]({url}) Via Deezer",
+        caption=f"Memainkan [{title}]({url}) Via Deezer",
     )
     os.remove("final.png")
 
@@ -769,13 +769,13 @@ async def deezer(client: Client, message_: Message):
 @Client.on_message(filters.command("splay") & filters.group & ~filters.edited)
 async def jiosaavn(client: Client, message_: Message):
     global que
-    lel = await message_.reply("🔄 **Processing**")
+    lel = await message_.reply("🔄 **Sedang Memproses**")
     administrators = await get_administrators(message_.chat)
     chid = message_.chat.id
     try:
         user = await USER.get_me()
     except:
-        user.first_name = "DaisyMusic"
+        user.first_name = "RifkyMusic"
     usar = user
     wew = usar.id
     try:
@@ -786,24 +786,24 @@ async def jiosaavn(client: Client, message_: Message):
             if administrator == message_.from_user.id:
                 if message_.chat.title.startswith("Channel Music: "):
                     await lel.edit(
-                        "<b>Remember to add helper to your channel</b>",
+                        "<b>Ingatlah untuk menambahkan pembantu ke saluran (channel) Anda</b>",
                     )
                     pass
                 try:
                     invitelink = await client.export_chat_invite_link(chid)
                 except:
                     await lel.edit(
-                        "<b>Add me as admin of yor group first</b>",
+                        "<b>Tambahkan saya sebagai admin grup Anda terlebih dahulu</b>",
                     )
                     return
 
                 try:
                     await USER.join_chat(invitelink)
                     await USER.send_message(
-                        message_.chat.id, "I joined this group for playing music in VC"
+                        message_.chat.id, "Saya bergabung dengan grup ini untuk bermain music dalam VC"
                     )
                     await lel.edit(
-                        "<b>helper userbot joined your chat</b>",
+                        "<b>helper userbot bergabung dengan obrolan Anda</b>",
                     )
 
                 except UserAlreadyParticipant:
@@ -811,15 +811,15 @@ async def jiosaavn(client: Client, message_: Message):
                 except Exception:
                     # print(e)
                     await lel.edit(
-                        f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} couldn't join your group due to heavy requests for userbot! Make sure user is not banned in group."
-                        "\n\nOr manually add @DaisyXmusic to your Group and try again</b>",
+                        f"<b>🔴 Flood Wait Error 🔴 \nUser {user.first_name} tidak dapat bergabung dengan grup Anda karena berat permintaan untuk userbot! Pastikan pengguna tidak dibanned dalam grup."
+                        "\n\nAtau tambahkan secara manual @rifkyyyyyyyyyyyyyyyy ke Grup Anda dan coba lagi</b>",
                     )
     try:
         await USER.get_chat(chid)
         # lmoa = await client.get_chat_member(chid,wew)
     except:
         await lel.edit(
-            "<i> helper Userbot not in this chat, Ask admin to send /play command for first time or add assistant manually</i>"
+            "<i> helper Userbot tidak ada dalam obrolan ini, Minta admin untuk mengirim / play perintah untuk pertama kalinya atau menambahkan asisten secara manual</i>"
         )
         return
     requested_by = message_.from_user.first_name
@@ -827,7 +827,7 @@ async def jiosaavn(client: Client, message_: Message):
     text = message_.text.split(" ", 1)
     query = text[1]
     res = lel
-    await res.edit(f"Searching 👀👀👀 for `{query}` on jio saavn")
+    await res.edit(f"Sedang Mencari untuk `{query}` on jio saavn")
     try:
         songs = await arq.saavn(query)
         if not songs.ok:
@@ -839,18 +839,18 @@ async def jiosaavn(client: Client, message_: Message):
         sthumb = songs.result[0].image
         sduration = int(songs.result[0].duration)
     except Exception as e:
-        await res.edit("Found Literally Nothing!, You Should Work On Your English.")
+        await res.edit("Tidak Ditemukan Secara Harafiah!, Anda Harus Mengerjakan Bahasa Inggris Anda.")
         print(str(e))
         return
     keyboard = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("📖 Playlist", callback_data="playlist"),
+                InlineKeyboardButton("📖 Daftar putar", callback_data="playlist"),
                 InlineKeyboardButton("Menu ⏯ ", callback_data="menu"),
             ],
             [
                 InlineKeyboardButton(
-                    text="Join Updates Channel", url=f"https://t.me/{updateschannel}"
+                    text="Join Channel", url=f"https://t.me/{updateschannel}"
                 )
             ],
             [InlineKeyboardButton(text="🗑 Tutup", callback_data="cls")],
@@ -871,11 +871,11 @@ async def jiosaavn(client: Client, message_: Message):
             chat_id=message_.chat.id,
             reply_markup=keyboard,
             photo="final.png",
-            caption=f"✯{bn}✯=#️⃣ Queued at position {position}",
+            caption=f"✯{bn}✯=#️⃣ Antri di posisi {position}",
         )
 
     else:
-        await res.edit_text(f"{bn}=▶️ Playing.....")
+        await res.edit_text(f"{bn}=▶️ Memainkan.....")
         que[chat_id] = []
         qeue = que.get(chat_id)
         s_name = sname
@@ -886,7 +886,7 @@ async def jiosaavn(client: Client, message_: Message):
         try:
             callsmusic.pytgcalls.join_group_call(chat_id, file_path)
         except:
-            res.edit("Group call is not connected of I can't join it")
+            res.edit("Panggilan grup tidak terhubung dari Saya tidak bisa Bergabung")
             return
     await res.edit("Generating Thumbnail.")
     await generate_cover(requested_by, sname, ssingers, sduration, sthumb)
@@ -895,9 +895,11 @@ async def jiosaavn(client: Client, message_: Message):
         chat_id=message_.chat.id,
         reply_markup=keyboard,
         photo="final.png",
-        caption=f"Playing {sname} Via Jiosaavn",
+        caption=f"Memainkan {sname} Via Jiosaavn",
     )
     os.remove("final.png")
 
 
 # Have u read all. If read RESPECT :-)
+# Modifided by Apis
+# Cash by rifky
